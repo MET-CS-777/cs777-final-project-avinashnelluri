@@ -12,9 +12,7 @@ from xgboost import XGBClassifier
 # Initialize Spark session
 spark = SparkSession.builder.appName("777 Project").getOrCreate()
 
-# Load the dataset (replace with your actual path)
-file_path = "C:\\Users\\avina\\Documents\\GitHub\\cs777-final-project-avinashnelluri\\diabetes_health_indicators.csv"
-df = spark.read.csv(file_path, header=True, inferSchema=True)
+df = spark.read.csv('diabetes_health_indicators.csv', header = True, inferSchema = True)
 
 # Rename the label column
 df = df.withColumnRenamed("Diabetes_012", "label")
